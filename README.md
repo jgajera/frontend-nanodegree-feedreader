@@ -1,7 +1,7 @@
 # Project Overview
 In this project, I was given a web-based application that reads RSS feeds.
 
-The original developer of this application already included [Jasmine](http://jasmine.github.io/) and started their first test suite. I had to understand the application to write a complete test suite.
+The original developer of this application already included [Jasmine](http://jasmine.github.io/) and started their first test suite. I had to thoroughly gain an understanding of the application to write several test suites (requirements outlined [below](#miscnotes)).
 
 This project primarily makes me practice test-driven development, where I write tests that fail first and code features that pass the initial test requirements.
 
@@ -29,7 +29,7 @@ Clone with HTTPS to your local machine
 https://github.com/jgajera/frontend-nanodegree-feedreader.git
 ```
 ### Was it successful?
-You should see all of the files from the [Github repo](https://github.com/jgajera/frontend-nanodegree-arcade-game) in your folder system on your local computer! If not, please raise an [issue](https://github.com/jgajera/frontend-nanodegree-arcade-game/issues) - you likely have a problem with your Git or Github configuration.
+You should see all of the files from the [Github repo](https://github.com/jgajera/frontend-nanodegree-feedreader) in your folder system on your local computer! If not, please raise an [issue](https://github.com/jgajera/frontend-nanodegree-feedreader/issues) - you likely have a problem with your Git or Github configuration.
 
 ## Resources
 I used the following resources:
@@ -49,8 +49,8 @@ Here is the [rubric for this project](https://review.udacity.com/#!/projects/344
 ```
 1. Review the functionality of the application within your browser.
 2. Explore the application's HTML, CSS, and JavaScript to gain an understanding of how it works.
-3. Explore the Jasmine spec file in **./jasmine/spec/feedreader.js** and review the [Jasmine documentation](http://jasmine.github.io).
-4. Edit the `allFeeds` variable in **./js/app.js** to make the provided test fail and see how Jasmine visualizes this failure in your application.
+3. Explore the Jasmine spec file and review the Jasmine documentation.
+4. Edit the `allFeeds` variable to make the provided test fail and see how Jasmine visualizes this failure in your application.
 5. Return the `allFeeds` variable to a passing state.
 6. Write a test that loops through each feed in the `allFeeds` object and ensures it has a URL defined and that the URL is not empty.
 7. Write a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty.
