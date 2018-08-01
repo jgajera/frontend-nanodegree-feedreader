@@ -47,18 +47,36 @@ $(function() {
 
   /* Second test suite named "The menu" */
   describe('The menu', function() {
+    const bodyClass = document.querySelector('body').classList;
 
-    /* TODO: Write a test that ensures the menu element is
-     * hidden by default. You'll have to analyze the HTML and
-     * the CSS to determine how we're performing the
-     * hiding/showing of the menu element.
-     */
-
-    /* TODO: Write a test that ensures the menu changes
+    // test that ensures the menu element is hidden by default. 
+    it('menu element hidden by default', function() {
+      expect(bodyClass).toContain('menu-hidden');
+    });
+    /* test that ensures the menu changes
      * visibility when the menu icon is clicked. This test
-     * should have two expectations: does the menu display when
+     * has two expectations: does the menu display when
      * clicked and does it hide when clicked again.
      */
+    // set up variable that counts clicks on menu button
+    let clickerCounter = 0;
+    // increment clickerCounter var when menu button clicked
+    document.querySelector('.menu-icon-link').addEventListener('click', function() {
+      clickerCounter += 1;
+      console.log(clickerCounter);
+    });
+    // test 
+    it('menu changes visibility when toggled', function() {
+      if (clickerCounter % 2 === 1) {
+        // if counter was clicked an odd
+        // number of times, menu should be visible
+        expect(bodyClass).toContain('menu-hidden');;
+      } else {
+        // else, if counter not clicked or clicked an even
+        // number of times, menu should be hidden
+        expect(bodyClass).toContain('menu-hidden');
+      }
+    });
   });
 
   /* Third test suite named "Initial Entries" */
@@ -79,7 +97,7 @@ $(function() {
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
      */
-     
+
   });
 
 
