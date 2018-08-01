@@ -48,21 +48,21 @@ This project is based on the starter code from Udacity FEND's repo for this proj
 
 Here is the [rubric for this project](https://review.udacity.com/#!/projects/3442558598/rubric), and some specific instructions from Udacity:
 
-~~1. Review the functionality of the application within your browser.
+~~1. Review the functionality of the application within your browser.~~
 
-2. Explore the application's HTML, CSS, and JavaScript to gain an understanding of how it works.
+~~2. Explore the application's HTML, CSS, and JavaScript to gain an understanding of how it works.~~
 
-3. Explore the Jasmine spec file and review the Jasmine documentation.
+~~3. Explore the Jasmine spec file and review the Jasmine documentation.~~
 
-4. Edit the `allFeeds` variable to make the provided test fail and see how Jasmine visualizes this failure in your application.
+~~4. Edit the `allFeeds` variable to make the provided test fail and see how Jasmine visualizes this failure in your application.~~
 
-5. Return the `allFeeds` variable to a passing state.
+~~5. Return the `allFeeds` variable to a passing state.~~
 
-6. Write a test that loops through each feed in the `allFeeds` object and ensures it has a URL defined and that the URL is not empty.
+~~6. Write a test that loops through each feed in the `allFeeds` object and ensures it has a URL defined and that the URL is not empty.~~
 
-7. Write a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty.
+~~7. Write a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty.~~
 
-8. Write a new test suite named `"The menu"`.~~
+~~8. Write a new test suite named `"The menu"`.~~
 
 9. Write a test that ensures the menu element is hidden by default. You'll have to analyze the HTML and the CSS to determine how we're performing the hiding/showing of the menu element.
 
