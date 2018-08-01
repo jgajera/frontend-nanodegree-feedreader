@@ -34,6 +34,7 @@ You should see all of the files from the [Github repo](https://github.com/jgajer
 ## Resources
 I used the following resources:
 - The [Jasmine Javascript library](https://jasmine.github.io/) was used in this project to write test suites and ensure our application is working as expected.
+- Also spent a lot of time getting familiar with [Jasmine's API documentation](https://jasmine.github.io/pages/docs_home.html).
 
 ## Contributing
 Not accepting contributions! Feel free to open an issue if you find one. Thanks!
