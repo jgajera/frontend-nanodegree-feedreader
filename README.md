@@ -47,7 +47,6 @@ Not accepting contributions! Feel free to open an issue if you find one. Thanks!
 This project is based on the starter code from Udacity FEND's repo for this project. 
 
 Here is the [rubric for this project](https://review.udacity.com/#!/projects/3442558598/rubric), and some specific instructions from Udacity:
-```
 ~~1. Review the functionality of the application within your browser.
 2. Explore the application's HTML, CSS, and JavaScript to gain an understanding of how it works.
 3. Explore the Jasmine spec file and review the Jasmine documentation.
@@ -67,4 +66,3 @@ Here is the [rubric for this project](https://review.udacity.com/#!/projects/344
 17. Implement error handling for undefined variables and out-of-bound array access.
 18. When complete - all of your tests should pass. 
 19. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
-```
