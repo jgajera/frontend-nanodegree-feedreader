@@ -18,7 +18,6 @@ $(function() {
       expect(allFeeds.length).not.toBe(0);
     });
 
-
     /* test that loops through each feed in the allFeeds
      * object and ensures it has a URL defined
      * and that the URL is not empty.
@@ -30,7 +29,6 @@ $(function() {
       }
     });
 
-
     /* test that loops through each feed in the allFeeds
      * object and ensures it has a name defined
      * and that the name is not empty.
@@ -41,9 +39,7 @@ $(function() {
         expect(allFeeds[i].name).not.toEqual("");
       }
     });
-
   });
-
 
   /* Second test suite named "The menu" */
   describe('The menu', function() {
@@ -70,7 +66,7 @@ $(function() {
       if (clickerCounter % 2 === 1) {
         // if counter was clicked an odd
         // number of times, menu should be visible
-        expect(bodyClass).toContain('menu-hidden');;
+        expect(bodyClass).not.toContain('menu-hidden');;
       } else {
         // else, if counter not clicked or clicked an even
         // number of times, menu should be hidden
@@ -88,6 +84,7 @@ $(function() {
      * Remember, loadFeed() is asynchronous so this test will require
      * the use of Jasmine's beforeEach and asynchronous done() function.
      */
+
   });
 
   /* Fourth test suite named "New Feed Selection" */
@@ -97,9 +94,6 @@ $(function() {
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
      */
-
   });
-
-
 
 }());
