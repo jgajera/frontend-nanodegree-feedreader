@@ -17,7 +17,7 @@ This project primarily makes me practice test-driven development, where I write 
 To get a copy of this repo, please follow these instructions:
 ### Prerequisites
 You'll want `git` installed on your machine. For help setting up `git`, follow instructions from [this free course from Udacity](https://www.udacity.com/course/version-control-with-git--ud123). Also, familiarity with HTML, CSS, and Javascript will set you up for success.
-### Installation/Running the Game
+### Installation/Running Jasmine
 Fork this repo into your own account. If you'd prefer not:
 
 Clone with SSH to your local machine
@@ -35,6 +35,10 @@ You should see all of the files from the [Github repo](https://github.com/jgajer
 I used the following resources:
 - The [Jasmine Javascript library](https://jasmine.github.io/) was used in this project to write test suites and ensure our application is working as expected.
 - Also spent a lot of time getting familiar with [Jasmine's API documentation](https://jasmine.github.io/pages/docs_home.html).
+- jQuery was included in this project.
+- Handlebars.js was also included in this project.
+- Google's JSAPI came bundled in this project.
+- The following Google font was used in this project: Roboto
 
 ## Contributing
 Not accepting contributions! Feel free to open an issue if you find one. Thanks!
