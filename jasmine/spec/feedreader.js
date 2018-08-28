@@ -59,7 +59,6 @@ $(function() {
     // increment clickerCounter var when menu button clicked
     document.querySelector('.menu-icon-link').addEventListener('click', function() {
       clickerCounter += 1;
-      console.log(clickerCounter);
     });
     // test 
     it('menu changes visibility when toggled', function() {
@@ -97,45 +96,56 @@ $(function() {
 
   /* Fourth test suite named "New Feed Selection" */
   describe('New Feed Selection', function() {
-    const udaciFeed = document.querySelector('.feed');
 
-    const oldFeedArray = [];
-    const newFeedArray = [];
-
-    beforeEach(function(done) {
-      loadFeed(0);
-      const entryTitle = [...document.querySelectorAll('.entry h2')];
-      const entryTitleLength = entryTitle.length;
-      console.log(entryTitleLength);
-      for (let j = 0; j < entryTitleLength; j++) {
-        oldFeedArray.push(entryTitle[j].innerHTML);
-      }
-
-      loadFeed(1, done); // before init
-      // find feed length to loop over it
-      const feedLength = document.querySelectorAll('.entry-link').length;
-      for (var i = 0; feedLength > i; i++) {
-        newFeedArray.push(udaciFeed.children[i]);
-      }
-
-    });
-
-    let trueFalseMatch = '';
-
-    it('changes content when new feed loads', function() {
-      if (oldFeedArray[0] === newFeedArray[0]) {
-        trueFalseMatch = true;
-      } else {
-        trueFalseMatch = false;
-      }
-
-      expect(trueFalseMatch).toBe(false);
-    });
     /* TODO: Write a test that ensures when a new feed is loaded
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
      */
 
+    // create an empty array for current feed headlines
+    const oldFeedArray = [];
+    // create an empty array for new feed headlines
+    const newFeedArray = [];
+
+    beforeEach(function(done) {
+      // load current/first feed
+      loadFeed(0);
+      // grab all headlines and put into an array
+      const oldEntryTitle = [...document.querySelectorAll('.entry h2')];
+      // get array length to iterate over it
+      const oldEntryTitleLength = oldEntryTitle.length;
+      // push headline text into empty array
+      for (let j = 0; j < oldEntryTitleLength; j++) {
+        oldFeedArray.push(oldEntryTitle[j].innerHTML);
+      }
+
+      // load second/new feed
+      loadFeed(3, done);
+
+    });
+
+    // set empty variable for comparing later on
+    let trueFalseMatch = '';
+
+    it('changes content when new feed loads', function() {
+
+      // grab new feed data for comparison
+      const newEntryTitle = [...document.querySelectorAll('.entry h2')];
+      // find new feed length to loop over it
+      const newEntryTitleLength = newEntryTitle.length;
+      // push new headline text into empty array 
+      for (var i = 0; newEntryTitleLength > i; i++) {
+        newFeedArray.push(newEntryTitle[i].innerHTML);
+      }
+
+// compare old feed and new feed's first headlines and set trueFalseMatch accordingly
+      if (oldFeedArray[0] === newFeedArray[0]) {
+        trueFalseMatch = true;
+      } else {
+        trueFalseMatch = false;
+      }
+      expect(trueFalseMatch).toBe(false);
+    });
   });
 
 }());
