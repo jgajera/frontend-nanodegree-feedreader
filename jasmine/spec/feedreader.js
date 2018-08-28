@@ -75,6 +75,7 @@ $(function() {
     });
   });
 
+
   /* Third test suite named "Initial Entries" */
   describe('Initial Entries', function() {
 
@@ -84,16 +85,57 @@ $(function() {
      * Remember, loadFeed() is asynchronous so this test will require
      * the use of Jasmine's beforeEach and asynchronous done() function.
      */
+    beforeEach(function(done) {
+      loadFeed(0, done); // before init
+    });
 
+    it('completes its work', function() {
+      const feedLength = document.querySelectorAll('.entry-link').length;
+      expect(feedLength).toBeGreaterThan(0);
+    });
   });
 
   /* Fourth test suite named "New Feed Selection" */
   describe('New Feed Selection', function() {
+    const udaciFeed = document.querySelector('.feed');
 
+    const oldFeedArray = [];
+    const newFeedArray = [];
+
+    beforeEach(function(done) {
+      loadFeed(0);
+      const entryTitle = [...document.querySelectorAll('.entry h2')];
+      const entryTitleLength = entryTitle.length;
+      console.log(entryTitleLength);
+      for (let j = 0; j < entryTitleLength; j++) {
+        oldFeedArray.push(entryTitle[j].innerHTML);
+      }
+
+      loadFeed(1, done); // before init
+      // find feed length to loop over it
+      const feedLength = document.querySelectorAll('.entry-link').length;
+      for (var i = 0; feedLength > i; i++) {
+        newFeedArray.push(udaciFeed.children[i]);
+      }
+
+    });
+
+    let trueFalseMatch = '';
+
+    it('changes content when new feed loads', function() {
+      if (oldFeedArray[0] === newFeedArray[0]) {
+        trueFalseMatch = true;
+      } else {
+        trueFalseMatch = false;
+      }
+
+      expect(trueFalseMatch).toBe(false);
+    });
     /* TODO: Write a test that ensures when a new feed is loaded
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
      */
+
   });
 
 }());
