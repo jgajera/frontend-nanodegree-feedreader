@@ -18,16 +18,22 @@ To get a copy of this repo, please follow these instructions:
 ### Prerequisites
 You'll want `git` installed on your machine. For help setting up `git`, follow instructions from [this free course from Udacity](https://www.udacity.com/course/version-control-with-git--ud123). Also, familiarity with HTML, CSS, and Javascript will set you up for success.
 ### Installation/Running Jasmine
-Fork this repo into your own account. If you'd prefer not:
+Fork this repo into your own account. If you'd prefer not to fork / you're not comfortable with Github:
 
-Clone with SSH to your local machine
+(1) Clone with SSH to your local machine (just copy this into your terminal after you've changed the terminal's directory to the spot where you want to download these files)
 ```
 git@github.com:jgajera/frontend-nanodegree-feedreader.git
 ```
-Clone with HTTPS to your local machine
+(1) OR clone with HTTPS to your local machine (just copy this into your terminal after you've changed the terminal's directory to the spot where you want to download these files)
 ```
 https://github.com/jgajera/frontend-nanodegree-feedreader.git
 ```
+(2) Navigate to the folder you indicated in the terminal. If you didn't change folders in the terminal (with the `cd` command, usually), then your files are probably in one of your top-level computer files, like User -> You -> Somewhere in here.
+
+(3) Open index.html to view the Jasmine pass/fail results.
+
+(4) Find Jasmine test suite file in /jasmine/spec/feedreader.js
+
 ### Was it successful?
 You should see all of the files from the [Github repo](https://github.com/jgajera/frontend-nanodegree-feedreader) in your folder system on your local computer! If not, please raise an [issue](https://github.com/jgajera/frontend-nanodegree-feedreader/issues) - you likely have a problem with your Git or Github configuration.
 
