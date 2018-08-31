@@ -44,33 +44,27 @@ $(function() {
   /* Second test suite named "The menu" */
   describe('The menu', function() {
     const bodyClass = document.querySelector('body').classList;
+    const bodySelector = document.querySelector('body');
+    // define class selector so future dev can switch it out quickly
+    let bodyMenuToggleClass = "menu-hidden";
+
 
     // test that ensures the menu element is hidden by default. 
     it('menu element hidden by default', function() {
-      expect(bodyClass).toContain('menu-hidden');
+      expect(bodyClass).toContain(bodyMenuToggleClass);
     });
     /* test that ensures the menu changes
      * visibility when the menu icon is clicked. This test
      * has two expectations: does the menu display when
      * clicked and does it hide when clicked again.
      */
-    // set up variable that counts clicks on menu button
-    let clickerCounter = 0;
-    // increment clickerCounter var when menu button clicked
-    document.querySelector('.menu-icon-link').addEventListener('click', function() {
-      clickerCounter += 1;
-    });
-    // test 
+    let menuSelector = document.querySelector('.menu-icon-link');
+
     it('menu changes visibility when toggled', function() {
-      if (clickerCounter % 2 === 1) {
-        // if counter was clicked an odd
-        // number of times, menu should be visible
-        expect(bodyClass).not.toContain('menu-hidden');;
-      } else {
-        // else, if counter not clicked or clicked an even
-        // number of times, menu should be hidden
-        expect(bodyClass).toContain('menu-hidden');
-      }
+      menuSelector.click();
+      expect(bodyClass).not.toBe(bodyMenuToggleClass);
+      menuSelector.click();
+      expect(bodyClass).toContain(bodyMenuToggleClass);
     });
   });
 
@@ -89,7 +83,7 @@ $(function() {
     });
 
     it('completes its work', function() {
-      const feedLength = document.querySelectorAll('.entry-link').length;
+      const feedLength = document.querySelectorAll('.feed .entry').length;
       expect(feedLength).toBeGreaterThan(0);
     });
   });
@@ -109,42 +103,35 @@ $(function() {
 
     beforeEach(function(done) {
       // load current/first feed
-      loadFeed(0);
-      // grab all headlines and put into an array
-      const oldEntryTitle = [...document.querySelectorAll('.entry h2')];
-      // get array length to iterate over it
-      const oldEntryTitleLength = oldEntryTitle.length;
-      // push headline text into empty array
-      for (let j = 0; j < oldEntryTitleLength; j++) {
-        oldFeedArray.push(oldEntryTitle[j].innerHTML);
-      }
+      loadFeed(0, function() {
+        // grab all headlines and put into an array
+        const oldEntryTitle = [...document.querySelectorAll('.entry h2')];
+        // get array length to iterate over it
+        const oldEntryTitleLength = oldEntryTitle.length;
+        // push headline text into empty array
+        for (let j = 0; j < oldEntryTitleLength; j++) {
+          oldFeedArray.push(oldEntryTitle[j].innerHTML);
+        }
 
-      // load second/new feed
-      loadFeed(3, done);
+        // load second/new feed
+        loadFeed(2, function() {
+          // grab new feed data for comparison
+          const newEntryTitle = [...document.querySelectorAll('.entry h2')];
+          // find new feed length to loop over it
+          const newEntryTitleLength = newEntryTitle.length;
+          // push new headline text into empty array 
+          for (var i = 0; newEntryTitleLength > i; i++) {
+            newFeedArray.push(newEntryTitle[i].innerHTML);
+          }
+          done();
+        });
+
+      });
 
     });
 
-    // set empty variable for comparing later on
-    let trueFalseMatch = '';
-
     it('changes content when new feed loads', function() {
-
-      // grab new feed data for comparison
-      const newEntryTitle = [...document.querySelectorAll('.entry h2')];
-      // find new feed length to loop over it
-      const newEntryTitleLength = newEntryTitle.length;
-      // push new headline text into empty array 
-      for (var i = 0; newEntryTitleLength > i; i++) {
-        newFeedArray.push(newEntryTitle[i].innerHTML);
-      }
-
-// compare old feed and new feed's first headlines and set trueFalseMatch accordingly
-      if (oldFeedArray[0] === newFeedArray[0]) {
-        trueFalseMatch = true;
-      } else {
-        trueFalseMatch = false;
-      }
-      expect(trueFalseMatch).toBe(false);
+      expect(oldFeedArray[0]).not.toEqual(newFeedArray[0]);
     });
   });
 
